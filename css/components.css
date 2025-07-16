@@ -1,0 +1,560 @@
+/*
+ * components.css
+ *
+ * This file contains specific CSS styles for reusable UI components
+ * such as modals, forms within modals, and media gallery elements.
+ * These styles are typically more granular and component-specific than
+ * the general styles defined in styles.css.
+ */
+
+/* Modal Styles: General styling for all modal popups */
+.modal {
+  position: fixed; /* Stays in place relative to the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000; /* Ensures modal is on top of all other content */
+  opacity: 0; /* Hidden by default */
+  visibility: hidden; /* Ensures it's not interactive when hidden */
+  transition: var(--transition); /* Smooth fade-in/out */
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+  max-width: 500px; /* Max width for most modals */
+  width: 90%; /* Responsive width */
+  max-height: 90vh; /* Max height to prevent overflow on small screens */
+  overflow-y: auto; /* Enables scrolling if content exceeds height */
+  transform: scale(0.9); /* Starts slightly smaller for animation */
+  transition: var(--transition); /* Smooth scale-in */
+}
+
+.modal.active .modal-content {
+  transform: scale(1); /* Scales to full size when active */
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.modal-header h3 {
+  margin: 0; /* Override default heading margin */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--forest-green);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--gray-500);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.modal-close:hover {
+  color: var(--gray-700);
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+/* Donation Modal Specific Styles: Multi-step form for donations */
+.donation-step {
+  display: block; /* Default display for active step */
+}
+
+.donation-step.hidden {
+  display: none; /* Hides inactive steps */
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.back-btn {
+  background: var(--gray-100);
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.back-btn:hover {
+  background: var(--gray-200);
+  color: var(--gray-800);
+}
+
+.amount-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive grid for amount buttons */
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.amount-btn {
+  padding: 1rem;
+  border: 2px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  background: var(--white);
+  color: var(--gray-700);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.amount-btn:hover,
+.amount-btn.selected {
+  border-color: var(--sunset-orange);
+  background: rgba(255, 126, 0, 0.1);
+  color: var(--sunset-orange);
+}
+
+.custom-amount {
+  margin-bottom: 1.5rem;
+}
+
+.custom-amount label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--gray-700);
+}
+
+.custom-amount input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+}
+
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.payment-method {
+  border: 2px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.payment-method:hover,
+.payment-method.selected {
+  border-color: var(--sunset-orange);
+  background: rgba(255, 126, 0, 0.05);
+}
+
+.payment-method input[type="radio"] {
+  display: none; /* Hides the actual radio button */
+}
+
+.payment-method label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  cursor: pointer;
+  width: 100%;
+}
+
+.method-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: var(--border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.method-icon.mpesa {
+  background: rgba(0, 128, 0, 0.2);
+  color: #008000;
+}
+
+.method-icon.paypal {
+  background: rgba(0, 48, 135, 0.2);
+  color: #003087;
+}
+
+.method-icon.bank {
+  background: rgba(255, 126, 0, 0.2);
+  color: var(--sunset-orange);
+}
+
+.method-info {
+  flex: 1;
+}
+
+.method-name {
+  font-weight: 600;
+  color: var(--gray-800);
+  margin-bottom: 0.25rem;
+}
+
+.method-desc {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+/* Media Modal Styles: Specific styles for the media gallery viewer modal */
+.media-modal {
+  max-width: 90vw; /* Wider than standard modals */
+  max-height: 90vh;
+  width: auto; /* Adjusts width based on content */
+}
+
+.media-modal-header {
+  position: relative;
+  background: var(--gray-900); /* Dark background for media modal header */
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.media-modal-header .modal-close {
+  color: var(--white);
+  font-size: 2rem;
+}
+
+.media-nav-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.media-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.media-nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.media-modal-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.media-content {
+  background: var(--black); /* Black background for media display area */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.media-content img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain; /* Ensures entire image is visible */
+}
+
+.media-content video {
+  max-width: 100%;
+  max-height: 70vh;
+}
+
+.media-info {
+  padding: 1.5rem;
+  background: var(--white);
+}
+
+.media-info h4 {
+  margin-bottom: 0.5rem;
+  color: var(--forest-green);
+}
+
+.media-info p {
+  color: var(--gray-600);
+  margin: 0;
+}
+
+/* Bank Info Modal Styles: Specific styles for bank transfer details modal */
+.bank-info-card {
+  text-align: center;
+}
+
+.bank-info-intro {
+  font-size: 1.125rem;
+  color: var(--gray-700);
+  margin-bottom: 2rem;
+}
+
+.bank-details {
+  background: var(--gray-50);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.bank-detail-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.bank-detail-item:last-child {
+  border-bottom: none; /* No border for the last item */
+}
+
+.detail-label {
+  font-weight: 600;
+  color: var(--gray-700);
+  min-width: 120px; /* Ensures labels align */
+  text-align: left;
+}
+
+.detail-value {
+  flex: 1;
+  text-align: center;
+  font-family: monospace; /* Monospace font for account numbers */
+  font-size: 1.125rem;
+  color: var(--forest-green);
+}
+
+.copy-btn {
+  background: var(--sunset-orange);
+  color: var(--white);
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.875rem;
+}
+
+.copy-btn:hover {
+  background: var(--sunset-red);
+}
+
+.bank-info-note {
+  background: rgba(255, 126, 0, 0.1);
+  border: 1px solid rgba(255, 126, 0, 0.3);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.bank-info-note p {
+  margin-bottom: 0.5rem;
+  color: var(--gray-700);
+}
+
+.bank-info-note p:last-child {
+  margin-bottom: 0;
+}
+
+/* Loading States: Styles for loading indicators */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid var(--gray-300);
+  border-top: 3px solid var(--sunset-orange);
+  border-radius: 50%;
+  animation: spin 1s linear infinite; /* Spinning animation */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Success/Error Messages: Styles for feedback messages */
+.message {
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.message.success {
+  background: rgba(34, 197, 94, 0.1); /* Light green background */
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #15803d; /* Dark green text */
+}
+
+.message.error {
+  background: rgba(239, 68, 68, 0.1); /* Light red background */
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #dc2626; /* Dark red text */
+}
+
+.message.info {
+  background: rgba(59, 130, 246, 0.1); /* Light blue background */
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: #2563eb; /* Dark blue text */
+}
+
+/* Animations: Keyframe definitions for various animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+.animate-fade-in-left {
+  animation: fadeInLeft 0.6s ease-out;
+}
+.animate-fade-in-right {
+  animation: fadeInRight 0.6s ease-out;
+}
+
+/* Hover Effects: Reusable hover transformations */
+.hover-lift {
+  transition: var(--transition);
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+}
+
+.hover-scale {
+  transition: var(--transition);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Focus States: Custom focus styles for accessibility */
+.focus-ring:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 126, 0, 0.3);
+}
+
+/* Accessibility: Styles for screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* High contrast mode support: Adjusts styles for high contrast settings */
+@media (prefers-contrast: high) {
+  .btn-primary {
+    border: 2px solid var(--white);
+  }
+
+  .btn-outline {
+    border-width: 2px;
+  }
+
+  .card {
+    border: 1px solid var(--gray-400);
+  }
+}
+
+/* Reduced motion support: Disables animations for users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,454 @@
+/*
+ * responsive.css
+ *
+ * This file contains media queries to ensure the website is responsive
+ * and adapts well to different screen sizes, from large desktops to small mobile devices.
+ * It uses a mobile-first approach, with styles for larger screens overriding
+ * those for smaller screens.
+ */
+
+/* Tablet Styles: Styles applied to screens up to 1024px wide (e.g., tablets in portrait) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 1.5rem; /* Increase horizontal padding for tablets */
+  }
+
+  .hero-content {
+    grid-template-columns: 1fr; /* Stack hero content vertically */
+    gap: 3rem;
+  }
+
+  .hero-text {
+    order: 2; /* Move text below image on tablets */
+    text-align: center;
+  }
+
+  .hero-image {
+    order: 1; /* Move image above text on tablets */
+  }
+
+  .hero-heading {
+    font-size: 3rem; /* Adjust heading size for tablets */
+  }
+
+  .programs-content {
+    grid-template-columns: 1fr; /* Stack programs content vertically */
+    gap: 3rem;
+  }
+
+  .testimonial-card.featured {
+    flex-direction: column; /* Stack featured testimonial content */
+    text-align: center;
+  }
+
+  .testimonial-image img {
+    width: 200px;
+    height: 250px;
+  }
+
+  .stories-grid {
+    grid-template-columns: 1fr; /* Stack stories vertically */
+    gap: 2rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr 1fr; /* Two columns for footer on tablets */
+    gap: 2rem;
+  }
+
+  .footer-info {
+    grid-column: 1 / -1; /* Make footer info span full width */
+    max-width: none;
+    text-align: center;
+  }
+}
+
+/* Mobile Styles: Styles applied to screens up to 768px wide (e.g., smartphones in portrait) */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide desktop navigation links */
+  }
+
+  .mobile-menu-btn {
+    display: block; /* Show mobile menu button */
+  }
+
+  .hero-section {
+    padding: 5rem 0 3rem;
+    min-height: auto; /* Allow hero section to shrink */
+  }
+
+  .foundation-title h1 {
+    font-size: 2rem; /* Further reduce heading size */
+  }
+
+  .hero-heading {
+    font-size: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+  }
+
+  .hero-actions {
+    flex-direction: column; /* Stack hero action buttons vertically */
+    align-items: center;
+  }
+
+  .hero-actions .btn {
+    width: 100%; /* Make buttons full width */
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  .hero-img {
+    height: 400px;
+  }
+
+  .hero-stat-card {
+    position: static; /* Remove absolute positioning */
+    margin-top: 1rem;
+    justify-content: center;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+  }
+
+  .section-header p {
+    font-size: 1rem;
+  }
+
+  .mission-cards {
+    grid-template-columns: 1fr; /* Stack mission cards vertically */
+  }
+
+  .programs-image img {
+    height: 300px;
+  }
+
+  .program-item {
+    flex-direction: column; /* Stack program item content */
+    text-align: center;
+  }
+
+  .testimonial-card.featured {
+    padding: 2rem;
+  }
+
+  .testimonial-image img {
+    width: 150px;
+    height: 200px;
+  }
+
+  .testimonial-content blockquote {
+    font-size: 1.125rem;
+  }
+
+  .student-cards {
+    grid-template-columns: 1fr; /* Stack student cards vertically */
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for stats */
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .media-gallery {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for media gallery */
+  }
+
+  .stories-column {
+    gap: 1.5rem;
+  }
+
+  .story-card img {
+    height: 200px;
+  }
+
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+
+  .cta-content p {
+    font-size: 1.125rem;
+  }
+
+  .cta-actions {
+    flex-direction: column; /* Stack CTA buttons vertically */
+    align-items: center;
+  }
+
+  .cta-actions .btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr; /* Stack footer content vertically */
+    text-align: center;
+  }
+
+  .contact-info p {
+    justify-content: center; /* Center contact info icons/text */
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 1rem;
+  }
+
+  .amount-buttons {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for amount buttons */
+  }
+
+  .payment-method label {
+    flex-direction: column; /* Stack payment method content */
+    text-align: center;
+    gap: 0.5rem;
+  }
+
+  .method-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .media-modal {
+    max-width: 95vw;
+    margin: 1rem;
+  }
+
+  .media-content {
+    min-height: 300px;
+  }
+
+  .media-nav-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Small Mobile Styles: Styles applied to screens up to 480px wide (e.g., very small smartphones) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem; /* Reduce padding for very small screens */
+  }
+
+  .hero-section {
+    padding: 4rem 0 2rem;
+  }
+
+  .foundation-title h1 {
+    font-size: 1.75rem;
+  }
+
+  .hero-heading {
+    font-size: 2rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .hero-img {
+    height: 300px;
+  }
+
+  .section-header h2 {
+    font-size: 1.75rem;
+  }
+
+  .mission-card {
+    padding: 1.5rem;
+  }
+
+  .testimonial-card.featured {
+    padding: 1.5rem;
+  }
+
+  .testimonial-image img {
+    width: 120px;
+    height: 150px;
+  }
+
+  .testimonial-content blockquote {
+    font-size: 1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr; /* Stack stats vertically */
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .media-gallery {
+    grid-template-columns: 1fr; /* Stack media items vertically */
+  }
+
+  .story-card img {
+    height: 180px;
+  }
+
+  .cta-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .cta-content p {
+    font-size: 1rem;
+  }
+
+  .amount-buttons {
+    grid-template-columns: 1fr; /* Stack amount buttons vertically */
+  }
+
+  .btn-lg {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .modal-header {
+    padding: 1rem;
+  }
+
+  .modal-body {
+    padding: 1rem;
+  }
+
+  .mobile-nav {
+    width: 280px; /* Slightly narrower mobile menu */
+  }
+
+  .scroll-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Landscape Mobile: Adjustments for mobile devices in landscape orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-section {
+    min-height: auto;
+    padding: 3rem 0 2rem;
+  }
+
+  .hero-img {
+    height: 250px;
+  }
+
+  .modal-content {
+    max-height: 80vh;
+  }
+}
+
+/* Print Styles: Optimizations for printing the webpage */
+@media print {
+  .header,
+  .mobile-nav,
+  .scroll-to-top,
+  .modal,
+  .cta-section {
+    display: none !important; /* Hide non-essential elements for print */
+  }
+
+  .hero-section {
+    padding-top: 2rem;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+
+  h1 {
+    font-size: 18pt;
+  }
+  h2 {
+    font-size: 16pt;
+  }
+  h3 {
+    font-size: 14pt;
+  }
+
+  .card,
+  .mission-card,
+  .story-card {
+    break-inside: avoid; /* Prevents elements from breaking across pages */
+    box-shadow: none;
+    border: 1px solid var(--gray-300);
+  }
+
+  .btn {
+    display: none; /* Hide buttons in print */
+  }
+
+  a[href^="http"]:after {
+    content: " (" attr(href) ")"; /* Show full URL for external links */
+    font-size: 10pt;
+    color: var(--gray-600);
+  }
+}
+
+/* High DPI Displays: Optimizations for high-resolution screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .hero-img,
+  .story-card img,
+  .student-card img,
+  .testimonial-image img {
+    image-rendering: -webkit-optimize-contrast; /* Improves image rendering on high DPI */
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Dark Mode Support: Styles for users who prefer dark mode */
+@media (prefers-color-scheme: dark) {
+  /* Override light mode variables with dark mode equivalents */
+  :root {
+    --white: #1a202c;
+    --black: #ffffff;
+    --gray-100: #2d3748;
+    --gray-200: #4a5568;
+    --gray-300: #718096;
+    --gray-400: #a0aec0;
+    --gray-500: #cbd5e0;
+    --gray-600: #e2e8f0;
+    --gray-700: #edf2f7;
+    --gray-800: #f7fafc;
+    --gray-900: #ffffff; /* White text on dark background */
+  }
+
+  .header {
+    background: rgba(26, 32, 44, 0.95);
+    border-bottom-color: var(--gray-200);
+  }
+
+  .hero-bg {
+    background: linear-gradient(135deg, rgba(45, 55, 72, 0.9), rgba(26, 32, 44, 0.8));
+  }
+
+  .card,
+  .mission-card,
+  .story-card,
+  .student-card {
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+  }
+
+  .modal-content {
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+  }
+
+  .footer {
+    background: var(--gray-900);
+  }
+}

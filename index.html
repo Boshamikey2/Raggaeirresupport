@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raggaeirre Support Foundation - Transforming Lives</title>
+    <meta name="description" content="Dedicated to breaking the cycle of poverty by providing education, healthcare, and essential resources to children in need.">
+    <meta name="keywords" content="charity, children, education, healthcare, Kenya, foundation, donation">
+    
+    <link rel="icon" href="C:\Users\DELL\Downloads\foundation-portfolio (4)\images\logo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-brand">
+                    <img src="C:\Users\DELL\Downloads\foundation-portfolio (4)\images\logo.jpg" alt="Raggaeirre Support Foundation Logo" class="logo" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x50?text=Raggaeirre+Logo'" loading="lazy">
+                </div>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#programs" class="nav-link">Programs</a>
+                    <a href="#testimonials" class="nav-link">Testimonials</a>
+                    <a href="#stories" class="nav-link">Stories</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <button class="btn btn-primary" onclick="openDonationModal()">Donate Now</button>
+                </div>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <div class="mobile-nav-content">
+                <div class="mobile-nav-header">
+                    <img src="C:\Users\DELL\Downloads\foundation-portfolio (4)\images\logo.jpg" alt="Raggaeirre Support Foundation Logo" class="mobile-logo" onerror="this.onerror=null;this.src='https://via.placeholder.com/150x50?text=Raggaeirre+Logo'" loading="lazy">
+                    <button class="mobile-close-btn" onclick="toggleMobileMenu()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="mobile-nav-links">
+                    <a href="#home" class="mobile-nav-link" onclick="closeMobileMenu()">Home</a>
+                    <a href="#programs" class="mobile-nav-link" onclick="closeMobileMenu()">Programs</a>
+                    <a href="#testimonials" class="mobile-nav-link" onclick="closeMobileMenu()">Testimonials</a>
+                    <a href="#stories" class="mobile-nav-link" onclick="closeMobileMenu()">Stories</a>
+                    <a href="#contact" class="mobile-nav-link" onclick="closeMobileMenu()">Contact</a>
+                    <button class="btn btn-primary mobile-donate-btn" onclick="openDonationModal(); closeMobileMenu();">Donate Now</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-bg"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <div class="foundation-title">
+                            <h1>Raggaeirre Support Foundation</h1>
+                            <div class="title-underline"></div>
+                        </div>
+                        <div class="hero-badge">
+                            <span>Transforming Lives Since 2023</span>
+                        </div>
+                        <h2 class="hero-heading">
+                            Every Child Deserves a <span class="text-accent">Bright Future</span>
+                        </h2>
+                        <p class="hero-description">
+                            We're dedicated to breaking the cycle of poverty by providing education, healthcare, and essential resources to children in need. Together, we can create lasting change.
+                        </p>
+
+                        <div class="hero-actions">
+                            <button class="btn btn-primary btn-lg" onclick="openDonationModal()">
+                                <i class="fas fa-heart"></i>
+                                Make a Donation
+                            </button>
+                            <a href="#stories" class="btn btn-outline btn-lg">
+                                <i class="fas fa-arrow-right"></i>
+                                Learn Our Story
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero-image">
+                        <img src="C:\Users\DELL\Downloads\foundation-portfolio (4)\images\img 1 top.jpg" alt="Children learning together in our programs" class="hero-img">
+                        <div class="hero-stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Children Helped</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Mission: Breaking the Cycle of Poverty</h2>
+                    <p>Founded in 2023, Raggaeirre Support Foundation has been at the forefront of child welfare and education. We believe that every child, regardless of their circumstances, deserves access to quality education, healthcare, and the opportunity to thrive.</p>
+                </div>
+                
+                <div class="mission-cards">
+                    <div class="mission-card">
+                        <div class="mission-icon education">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Education First</h3>
+                        <p>Providing quality education and learning resources to children in underserved communities.</p>
+                    </div>
+                    
+                    <div class="mission-card">
+                        <div class="mission-icon healthcare">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Healthcare Access</h3>
+                        <p>Ensuring children receive proper medical care, nutrition, and health education.</p>
+                    </div>
+                    
+                    <div class="mission-card">
+                        <div class="mission-icon safety">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Safe Environments</h3>
+                        <p>Creating secure, nurturing spaces where children can learn, play, and grow safely.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="programs" class="programs-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Programs</h2>
+                    <p>Comprehensive initiatives designed to address the multifaceted challenges facing children in need.</p>
+                </div>
+                
+                <div class="programs-content">
+                    <div class="programs-image">
+                        <img src="C:\Users\DELL\Downloads\foundation-portfolio (4)\images\img 2 top.jpg" alt="Facilitator of the organization working with students">
+                    </div>
+                    
+                    <div class="programs-list">
+                        <div class="program-item">
+                            <div class="program-icon education">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <div class="program-content">
+                                <h3>Education Support</h3>
+                                <p>Scholarships, school supplies, and tutoring programs to ensure children stay in school and succeed academically.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="program-item">
+                            <div class="program-icon nutrition">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="program-content">
+                                <h3>Nutrition Program</h3>
+                                <p>Daily meals and nutrition education to combat malnutrition and support healthy development.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="program-item">
+                            <div class="program-icon community">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="program-content">
+                                <h3>Community Outreach</h3>
+                                <p>Working with families and communities to create sustainable support systems for children.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Success Stories & Testimonials</h2>
+                    <p>Meet the bright young minds whose lives have been transformed through our educational support programs.</p>
+                </div>
+                <div class="featured-testimonial">
+                    <div class="testimonial-card featured">
+                        <div class="testimonial-image">
+                            <img src="C:\Users\DELL\Downloads\foundation-portfolio (4)\images\st 2.jpg" alt="Khamati Ryan testimonial">
+                            <div class="quote-icon">
+                                <i class="fas fa-quote-left"></i>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"The foundation has changed my life. I now have hope for a better future."</p>
+                            <div class="testimonial-author">
+                                <h3>Khamati Ryan</h3>
+                                <span>Foundation Beneficiary</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="student-cards">
+                    <div class="student-card">
+                        <img src="C:\Users\DELL\Downloads\foundation-portfolio (4)\images\st1.jpg" alt="Khamati Elvina">
+                        <div class="student-info">
+                            <h4>Khamati Elvina</h4>
+                            <p>"The foundation helped me stay in school when my family couldn't afford the fees. I'm so grateful!"</p>
+                        </div>
+                    </div>
+                    <div class="student-card">
+                        <img src="C:\Users\DELL\Downloads\foundation-portfolio (4)\images\st both.jpg" alt="Elvina & Ryan">
+                        <div class="student-info">
+                            <h4>Elvina & Ryan</h4>
+                            <p>"We're siblings and study partners. The foundation gave us both a chance at education."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stories" class="stories-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Stories from the Field</h2>
+                    <p>Real glimpses into the lives of the children we serve and the challenges they face every day.</p>
+                </div>
+                <div class="stories-grid">
+                    <div class="stories-column">
+                        <div class="story-card">
+                            <img src="C:\Users\DELL\Downloads\foundation-portfolio (4)\images\stories img1.jpg" alt="School washroom facilities">
+                            <div class="story-content">
+                                <p>"Look at the state of the toilets that the school can provide."</p>
+                            </div>
+                        </div>
+                        <div class="story-card">
+                            <img src="C:\Users\DELL\Downloads\foundation-portfolio (4)\images\stories img2.jpg" alt="School children in uniforms">
+                            <div class="story-content">
+                                <p>"Some children have shoes, others don't - but all share the same dream of education and a better future."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="stories-column">
+                        <div class="story-card">
+                            <img src="C:\Users\DELL\Downloads\foundation-portfolio (4)\images\stories img3.jpg" alt="Children learning in classroom">
+                            <div class="story-content">
+                                <p>"Despite challenges, these young minds show incredible determination to learn and build a better future for themselves."</p>
+                            </div>
+                        </div>
+                        <div class="story-card">
+                            <img src="C:\Users\DELL\Downloads\foundation-portfolio (4)\images\img 2 top.jpg" alt="Organization facilitator with students">
+                            <div class="story-content">
+                                <p>"Our organization's facilitator working with the children in class."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stories-cta">
+                    <div class="cta-card">
+                        <h3>Your Support Makes the Difference</h3>
+                        <p>Every donation helps us provide better living conditions, clean water access, educational resources, and dedicated teaching support to transform these children's lives.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="videos" class="video-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Impactfull Videos</h2>
+                    <p>Watch our impact in action</p>
+                </div>
+                <div class="video-grid">
+                    <div class="video-item">
+                        <video controls class="video-player">
+                            <source src="C:\Users\DELL\Downloads\foundation-portfolio (4)\videos\Testimonial video 1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Join Us in Making a Difference</h2>
+                    <p>Your support can transform a child's life. Every donation, no matter the size, brings hope and opportunity to children who need it most.</p>
+                    <div class="cta-actions">
+                        <button class="btn btn-white btn-lg" onclick="openDonationModal()">
+                            <i class="fas fa-heart"></i>
+                            Donate Today
+                        </button>
+                        <button class="btn btn-outline-white btn-lg" onclick="openVolunteerModal()">
+                            <i class="fas fa-users"></i>
+                            Volunteer
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <img src="C:\Users\DELL\Downloads\foundation-portfolio (4)\images\logo.jpg" alt="Raggaeirre Support Foundation Logo" class="footer-logo">
+                    <p>Dedicated to creating brighter futures for children in need through education, healthcare, and community support.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> info@raggaeirresupport.org</p>
+                        <p><i class="fas fa-envelope"></i> nasiombeliz@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +254 735 967 950</p>
+                        <p><i class="fas fa-phone"></i> +254 720 215 589</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Machakos, County, 2805-90100</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#programs">Our Programs</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#stories">Success Stories</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-actions">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><button onclick="openDonationModal()">Donate</button></li>
+                        <li><button onclick="openVolunteerModal()">Volunteer</button></li>
+                        <li><a href="#contact">Partner With Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Raggaeirre Support Foundation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button: Appears when scrolling down, helps navigate back to top -->
+    <button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div class="modal" id="donationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-heart"></i> Make a Donation</h3>
+                <button class="modal-close" onclick="closeDonationModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Step 1: Choose amount -->
+                <div class="donation-step" id="amountStep">
+                    <h4>Choose donation amount (KES)</h4>
+                    <div class="amount-buttons">
+                        <button class="amount-btn" onclick="selectAmount(500)">KES 500</button>
+                        <button class="amount-btn" onclick="selectAmount(1000)">KES 1,000</button>
+                        <button class="amount-btn" onclick="selectAmount(2500)">KES 2,500</button>
+                        <button class="amount-btn" onclick="selectAmount(5000)">KES 5,000</button>
+                        <button class="amount-btn" onclick="selectAmount(10000)">KES 10,000</button>
+                    </div>
+                    <div class="custom-amount">
+                        <label for="customAmount">Or enter custom amount</label>
+                        <input type="number" id="customAmount" placeholder="Enter amount in KES">
+                    </div>
+                    <button class="btn btn-primary" onclick="proceedToPayment()">Continue</button>
+                </div>
+                
+                <!-- Step 2: Choose payment method -->
+                <div class="donation-step hidden" id="paymentStep">
+                    <div class="step-header">
+                        <button class="back-btn" onclick="goBackToAmount()">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <span id="selectedAmountDisplay"></span>
+                    </div>
+                    <h4>Choose payment method</h4>
+                    <div class="payment-methods">
+                        <div class="payment-method" onclick="selectPaymentMethod('mpesa')">
+                            <input type="radio" name="paymentMethod" value="mpesa" id="mpesa">
+                            <label for="mpesa">
+                                <div class="method-icon mpesa">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <div class="method-info">
+                                    <div class="method-name">M-Pesa</div>
+                                    <div class="method-desc">Pay via M-Pesa mobile money</div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="payment-method" onclick="selectPaymentMethod('paypal')">
+                            <input type="radio" name="paymentMethod" value="paypal" id="paypal">
+                            <label for="paypal">
+                                <div class="method-icon paypal">
+                                    <i class="fas fa-credit-card"></i>
+                                </div>
+                                <div class="method-info">
+                                    <div class="method-name">PayPal</div>
+                                    <div class="method-desc">Pay with PayPal or credit card</div>
+                                </div>
+                            </label>
+                        </div>
+                        
+                        <div class="payment-method" onclick="selectPaymentMethod('bank')">
+                            <input type="radio" name="paymentMethod" value="bank" id="bank">
+                            <label for="bank">
+                                <div class="method-icon bank">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <div class="method-info">
+                                    <div class="method-name">Bank Transfer</div>
+                                    <div class="method-desc">Direct bank transfer</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" onclick="proceedToDetails()">Continue</button>
+                </div>
+                
+                <!-- Step 3: Enter donor details -->
+                <div class="donation-step hidden" id="detailsStep">
+                    <div class="step-header">
+                        <button class="back-btn" onclick="goBackToPayment()">
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                        <span id="paymentSummary"></span>
+                    </div>
+                    <form id="donationForm">
+                        <div class="form-group">
+                            <label for="donorName">Full Name *</label>
+                            <input type="text" id="donorName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="donorEmail">Email Address *</label>
+                            <input type="email" id="donorEmail" required>
+                        </div>
+                        <div class="form-group" id="phoneGroup" style="display: none;">
+                            <label for="donorPhone">Phone Number *</label>
+                            <input type="tel" id="donorPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="donorMessage">Message (optional)</label>
+                            <textarea id="donorMessage" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Donation</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Volunteer Modal: Popup for volunteer application -->
+    <div class="modal" id="volunteerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-users"></i> Become a Volunteer</h3>
+                <button class="modal-close" onclick="closeVolunteerModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="volunteerForm">
+                    <div class="form-group">
+                        <label for="volunteerName">Full Name *</label>
+                        <input type="text" id="volunteerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="volunteerEmail">Email Address *</label>
+                        <input type="email" id="volunteerEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="volunteerPhone">Phone Number *</label>
+                        <input type="tel" id="volunteerPhone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="volunteerSkills">Skills & Experience</label>
+                        <textarea id="volunteerSkills" placeholder="Tell us about your skills, experience, or areas of expertise"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="volunteerAvailability">Availability</label>
+                        <textarea id="volunteerAvailability" placeholder="When are you available to volunteer? (weekdays, weekends, specific times)"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="volunteerMessage">Why do you want to volunteer? *</label>
+                        <textarea id="volunteerMessage" placeholder="Tell us why you're passionate about helping children and our mission" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Application</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Media Gallery Modal: Popup for viewing media items (images/videos) -->
+    <div class="modal" id="mediaModal">
+        <div class="modal-content media-modal">
+            <div class="media-modal-header">
+                <button class="modal-close" onclick="closeMediaModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <button class="media-nav-btn prev" onclick="previousMedia()">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="media-nav-btn next" onclick="nextMedia()">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            <div class="media-modal-body">
+                <div class="media-content" id="mediaContent">
+                    <!-- Media content (image or video) will be populated by JavaScript -->
+                </div>
+                <div class="media-info" id="mediaInfo">
+                    <!-- Media title and description will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bank Transfer Info Modal: Popup for displaying bank details -->
+    <div class="modal" id="bankInfoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-university"></i> Bank Transfer Details</h3>
+                <button class="modal-close" onclick="closeBankInfoModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="bank-info-card">
+                    <p class="bank-info-intro">Please use the following bank details to make your donation:</p>
+                    
+                    <div class="bank-details">
+                        <div class="bank-detail-item">
+                            <span class="detail-label">Bank Name:</span>
+                            <span class="detail-value">Kenya Commercial Bank (KCB)</span>
+                            <button class="copy-btn" onclick="copyToClipboard('Kenya Commercial Bank (KCB)')">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="bank-detail-item">
+                            <span class="detail-label">Account Name:</span>
+                            <span class="detail-value">Raggaeirre Support Foundation</span>
+                            <button class="copy-btn" onclick="copyToClipboard('Raggaeirre Support Foundation')">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="bank-detail-item">
+                            <span class="detail-label">Account Number:</span>
+                            <span class="detail-value">1234567890</span>
+                            <button class="copy-btn" onclick="copyToClipboard('1234567890')">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="bank-detail-item">
+                            <span class="detail-label">SWIFT Code:</span>
+                            <span class="detail-value">KCBLKENX</span>
+                            <button class="copy-btn" onclick="copyToClipboard('KCBLKENX')">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        
+                        <div class="bank-detail-item">
+                            <span class="detail-label">Branch:</span>
+                            <span class="detail-value">Machakos Branch</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bank-info-note">
+                        <p><strong>Important:</strong> Please include your name and "Raggaeirre Donation" in the transfer reference.</p>
+                        <p>After making the transfer, please email us at info@raggaeirresupport.org with the transaction details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/data.js"></script>       <!-- Data definitions -->
+    <script src="js/components.js"></script>  <!-- Reusable UI component logic -->
+</body>
+</html>
