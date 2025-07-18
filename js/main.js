@@ -148,23 +148,13 @@ function handleScroll() {
   const header = document.querySelector(".header")
   if (header) {
     if (scrollTop > 50) {
-      // If scrolled down more than 50px
-      if (!isScrolled) {
-        // Only apply if not already scrolled
-        header.style.background = "rgba(255, 255, 255, 0.98)"
-        header.style.backdropFilter = "blur(20px)"
-        header.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.1)"
-        isScrolled = true
-      }
+      header.style.background = "rgba(255, 255, 255, 0.98)";
+      header.style.backdropFilter = "blur(20px)";
+      header.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.1)";
     } else {
-      // If scrolled back to top
-      if (isScrolled) {
-        // Only apply if previously scrolled
-        header.style.background = "rgba(255, 255, 255, 0.95)"
-        header.style.backdropFilter = "blur(10px)"
-        header.style.boxShadow = "none"
-        isScrolled = false
-      }
+      header.style.background = "rgba(255, 255, 255, 1)"; // Fully opaque at the top
+      header.style.backdropFilter = "blur(10px)";
+      header.style.boxShadow = "none";
     }
   }
 
@@ -179,12 +169,12 @@ function handleScroll() {
     }
   }
 
-  // Parallax effect for hero section
-  const heroSection = document.querySelector(".hero-section")
-  if (heroSection) {
-    const heroOffset = scrollTop * 0.5 // Scroll at half speed
-    heroSection.style.transform = `translateY(${heroOffset}px)`
-  }
+  // Parallax effect for hero section - REMOVED to prevent overlap issues
+  // const heroSection = document.querySelector(".hero-section")
+  // if (heroSection) {
+  //   const heroOffset = scrollTop * 0.5 // Scroll at half speed
+  //   heroSection.style.transform = `translateY(${heroOffset}px)`
+  // }
 
   lastScrollTop = scrollTop // Update last scroll position
 }

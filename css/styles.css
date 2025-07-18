@@ -65,6 +65,8 @@ body {
   line-height: 1.6; /* Improves readability of text */
   color: var(--gray-800);
   background-color: var(--white);
+  padding-top: 80px; /* Prevents content from being hidden under the fixed header */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 img {
@@ -347,11 +349,11 @@ p {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
+  background: rgba(255, 255, 255, 1); /* Fully opaque at the top */
   backdrop-filter: blur(10px); /* Blurs content behind header */
   border-bottom: 1px solid var(--gray-200);
   z-index: 1000; /* Ensures header is above other content */
-  transition: var(--transition);
+  transition: background 0.3s, box-shadow 0.3s, backdrop-filter 0.3s; /* Smooth transition for background and shadow */
 }
 
 .nav {
@@ -466,7 +468,8 @@ p {
   display: flex;
   align-items: center;
   padding: 6rem 0 4rem;
-  overflow: hidden; /* Hides parallax overflow */
+  z-index: 1; /* Ensure proper stacking */
+  background: var(--white); /* Solid background to prevent see-through */
 }
 
 .hero-bg {
@@ -581,6 +584,8 @@ p {
 .about-section {
   padding: 6rem 0;
   background: var(--white);
+  z-index: 2; /* Ensure it appears above hero section */
+  position: relative; /* Create stacking context */
 }
 
 .mission-cards {
@@ -633,6 +638,8 @@ p {
 .programs-section {
   padding: 6rem 0;
   background: rgba(242, 210, 189, 0.3); /* Light background for contrast */
+  z-index: 3; /* Ensure proper stacking */
+  position: relative; /* Create stacking context */
 }
 
 .programs-content {
@@ -689,6 +696,8 @@ p {
 .testimonials-section {
   padding: 6rem 0;
   background: var(--white);
+  z-index: 4; /* Ensure proper stacking */
+  position: relative; /* Create stacking context */
 }
 
 .featured-testimonial {
@@ -948,6 +957,8 @@ p {
 .stories-section {
   padding: 6rem 0;
   background: rgba(242, 210, 189, 0.3);
+  z-index: 5; /* Ensure proper stacking */
+  position: relative; /* Create stacking context */
 }
 
 .stories-grid {
@@ -1021,6 +1032,8 @@ p {
   background: var(--gradient-sunset);
   color: var(--white);
   text-align: center;
+  z-index: 6; /* Ensure proper stacking */
+  position: relative; /* Create stacking context */
 }
 
 .cta-content h2 {
@@ -1050,6 +1063,8 @@ p {
   background: var(--forest-green);
   color: var(--white);
   padding: 4rem 0 2rem;
+  z-index: 7; /* Ensure proper stacking */
+  position: relative; /* Create stacking context */
 }
 
 .footer-content {
@@ -1157,4 +1172,13 @@ p {
 .scroll-to-top:hover {
   background: var(--sunset-red);
   transform: translateY(-2px);
+}
+
+/* Ensure all sections are properly stacked and don't overlap */
+section {
+  margin-top: 80px; /* Ensures each section starts below the fixed header */
+  position: relative; /* Create stacking context for all sections */
+}
+section:first-of-type {
+  margin-top: 0;
 }
