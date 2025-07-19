@@ -51,6 +51,11 @@
     gap: 2rem;
   }
 
+  .videos-grid  {
+    grid-templates-columns: 1fr; /* Stack stories vertically */
+    gap: 2rem;
+  }
+  ///
   .footer-content {
     grid-template-columns: 1fr 1fr; /* Two columns for footer on tablets */
     gap: 2rem;
