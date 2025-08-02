@@ -720,8 +720,7 @@ p {
 }
 
 .testimonial-image img {
-  width: 250px;
-  height: 300px;
+  height: auto;
   object-fit: cover;
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-lg);
